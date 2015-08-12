@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget id="ScrollToRegion.widget.ScrollToRegion" needsEntityContext="true" xmlns="http://www.mendix.com/widget/1.0/">
+  <name>ScrollToRegion</name>
+  <description>This widget scrolls to a specific anchor on the page.</description>
+
+  <icon>iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAIAAABvFaqvAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAXBJREFUeNpi1HUJYqAGYGKgEhh8BrFgFeXh4lSSl8Gj7d37D09evCZsUFdVvrIcToOePn3KyMjYMXPxzfuPCXgNjylA8PPnTyApLSZM2EVA8OHDh2/fvgEZzMzM4uLiyFIbdu5nYWHef/j4fxZ2RiYmAgYJgAFWqfU79kI1s/9n4+AiYNDXr19//PiBHjUsLPz8/HDu318/GQgaxMHBwcrKiiYI9CYy9////39+/WRhY8dnEDCAfv36hSbIxsbGy8uLLPL39y8CBnFxcbGzs6MJAmMdTeTvn9////0DBjlOg36DAabXMP37+9cPYJCTlkWYmLCoBwU5VfIaNMjRRNUU5Xm4uYDRzMPDg6kHM/gRQY7Mj/B1L0iJwWXz27dvgRZgN+jPbxSv8fBw4wn7P3/+ABkvXr0mXIwsX7/194/vuMz69evn379/j546h1WWEa3M/v75AzBdUKGEZGXjoE5Ry8zGTh2DgJmAhSyzAAIMAJmifjLIONbJAAAAAElFTkSuQmCC</icon>
+
+  <properties>
+        <property key="scrollTo" type="attribute">
+            <caption>Scroll to</caption>
+            <category>Configuration</category>
+            <description>The attribute where the scroll to variable is set.</description>
+            <attributeTypes>
+                <attributeType name="String"/>
+            </attributeTypes>
+        </property>
+        <property key="regionToScroll" type="string" required="true" defaultValue="">
+            <caption>Region to scroll</caption>
+            <category>Configuration</category>
+            <description>The region which contains the anchor(s).</description>
+        </property>
+        <property key="offset" type="string" required="false" defaultValue="">
+            <caption>Offset</caption>
+            <category>Configuration</category>
+            <description>Offset</description>
+        </property>
+	</properties>
+</widget>
+

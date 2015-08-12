@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget id="ScrollToRegion.widget.Anchor" needsEntityContext="true" xmlns="http://www.mendix.com/widget/1.0/">
+  <name>Anchor</name>
+  <description>This widget places an anchor on the specific page.</description>
+
+  <icon>iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAIAAABvFaqvAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAVpJREFUeNpieeAfz0ANwMRAJTCMDWIhYA83F5e50a/fv3+fvfT/23fyDRJMjuLQ0fj85QuLhsq32UvJN4hNUe793GW///xhd3fAr5IRVzoSiAhg19EAGgT03cdPn4D++vvo6Z/rt3+s305aYANNAXoKaArUQi5OoO9YNFVJ9trbSXNYxESADPGWCiD5pX0ykPz3+i3JBv159QaIENzrt0mLfqD9/75+AzoHSGIPCxEhzuggIOPrxDkEwgiYcICxjstmoCmsxnqMsLDDadCv+48gsc6EoRQS5EyiwsAYxPQpukHAVPNl3xGgQZL9TTxONihpytacr6+BWU76584DmIkASzoCukV6Vg+yi4DpCM4GpqYvbZMwswuWMAIG88uaDqyBDTTl26wlWDMdc4GGARYNHz5+2bmfWZAfmJQY2Vh//vwJ1Pxzy57vC1b+e/OOtCwyWkJS3yCAAAMAhieRHdcZFPkAAAAASUVORK5CYII=</icon>
+
+  <properties>
+        <property key="anchorClass" type="string">
+            <caption>Anchor class</caption>
+            <category>Configuration</category>
+            <description>The class of the anchor.</description>
+        </property>
+	</properties>
+</widget>
+
