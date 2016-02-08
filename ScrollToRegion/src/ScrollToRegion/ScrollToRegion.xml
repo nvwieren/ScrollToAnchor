@@ -14,15 +14,28 @@
                 <attributeType name="String"/>
             </attributeTypes>
         </property>
-        <property key="regionToScroll" type="string" required="true" defaultValue="">
+        <property key="regionToScroll" type="string" required="true" defaultValue=".region-content .mx-scrollcontainer-wrapper">
             <caption>Region to scroll</caption>
             <category>Configuration</category>
-            <description>The region which contains the anchor(s).</description>
+            <description>The region which contains the anchor(s). If using new UX framework and your layout is set to per region use:.region-content .mx-scrollcontainer-wrapper. If your scroll behaviour is set to full page use: html, body.</description>
         </property>
-        <property key="offset" type="string" required="false" defaultValue="">
+        <property key="offset" type="integer" required="true" defaultValue="0">
             <caption>Offset</caption>
             <category>Configuration</category>
-            <description>Offset</description>
+            <description>Offset will reduce the position to scroll to. So will make it scroll higher than the anchor.</description>
+        </property>
+	  	<property key="scroll" type="enumeration" required="true" defaultValue="OnLoad">
+            <caption>Scroll Option</caption>
+            <category>Configuration</category>
+			<description>Choose when you want the widget to scroll</description>
+			<enumerationValues>
+                <enumerationValue key="OnLoad">On Load</enumerationValue>
+                <enumerationValue key="OnUpdate">On Update Object Change</enumerationValue>
+                <enumerationValue key="OnAttribute">On Attribute Change</enumerationValue>
+				<enumerationValue key="OnValidation">On Validation</enumerationValue>
+				<enumerationValue key="All">All</enumerationValue>
+            </enumerationValues>
+
         </property>
 	</properties>
 </widget>
