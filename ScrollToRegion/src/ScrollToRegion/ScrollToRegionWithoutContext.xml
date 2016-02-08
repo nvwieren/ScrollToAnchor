@@ -9,7 +9,7 @@
         <property key="scrollTo" type="string" required="true" defaultValue="">
             <caption>Scroll to</caption>
             <category>Configuration</category>
-            <description>The attribute where the scroll to variable is set.</description>
+            <description>The class the widget will scroll to. Do not include the Dot before the class name, this is already included in the widget</description>
         </property>
         <property key="regionToScroll" type="string" required="true" defaultValue=".region-content .mx-scrollcontainer-wrapper">
             <caption>Region to scroll</caption>

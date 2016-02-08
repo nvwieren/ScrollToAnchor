@@ -9,7 +9,7 @@
         <property key="anchorClass" type="string">
             <caption>Anchor class</caption>
             <category>Configuration</category>
-            <description>The class of the anchor.</description>
+            <description>The class of the anchor. Do not include the dot before the class name, this is handled by the widget.</description>
         </property>
 	</properties>
 </widget>
