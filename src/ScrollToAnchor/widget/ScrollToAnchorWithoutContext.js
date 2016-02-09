@@ -97,7 +97,6 @@ define([
                 
                 if (_scrollTo != ""){
                     if ($(`.${_scrollTo}`)[0]){
-                        debugger;
                         $(self.regionToScroll).animate({
                             scrollTop: $(`.${_scrollTo}`).offset().top - this.offset
                                 }, 1000);

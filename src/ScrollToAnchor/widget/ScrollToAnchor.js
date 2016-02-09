@@ -95,7 +95,6 @@ define([
             if (this._contextObj !== null) {
                 var _scrollTo = this._contextObj.get(this.scrollTo);
                 var self = this;
-                
                 if (_scrollTo != ""){
                     if ($(`.${_scrollTo}`)[0]){
                         $(self.regionToScroll).animate({
