@@ -2,10 +2,10 @@
 /*global mx, define, require, browser, devel, console, document, jQuery */
 /*mendix */
 /*
-    ScrollToRegionWithoutContext
+    ScrollToRegion
     ========================
 
-    @file      : ScrollToRegionWithoutContext.js
+    @file      : ScrollToRegion.js
     @version   : 1.0
     @author    : Simon Black & Chris Hodges
     @date      : Thu, 06 Aug 2015 16:30:30 GMT
@@ -35,14 +35,14 @@ define([
     "dojo/html",
     "dojo/_base/event",
 
-    "ScrollToRegion/lib/jquery-1.11.2"
+    "ScrollToAnchor/lib/jquery-1.11.2"
 ], function(declare, _WidgetBase, dom, dojoDom, dojoProp, dojoGeometry, dojoClass, dojoStyle, dojoConstruct, dojoArray, dojoLang, dojoText, dojoHtml, dojoEvent, _jQuery) {
     "use strict";
 
     var $ = _jQuery.noConflict(true);
 
     // Declare widget's prototype.
-    return declare("ScrollToRegion.widget.ScrollToRegionWithoutContext", [ _WidgetBase], {
+    return declare("ScrollToAnchor.widget.ScrollToAnchor", [ _WidgetBase], {
 
         // _TemplatedMixin will create our dom node using this HTML template.
 
@@ -65,19 +65,20 @@ define([
         // dijit._WidgetBase.postCreate is called after constructing the widget. Implement to do extra setup work.
         postCreate: function () {
             console.log(this.id + '.postCreate');
-            
+			
             this._setupEvents();
         },
 
         // mxui.widget._WidgetBase.update is called when context is changed or initialized. Implement to re-render and / or fetch data.
         update: function (obj, callback) {
             console.log(this.id + '.update');
-
+			
             this._contextObj = obj;
             this._resetSubscriptions();
 			if (this.scroll === 'OnLoad' || this.scroll === 'All'){
-            	this._updateRendering();
+				this._updateRendering();
 			}
+            
 
             callback();
         },
@@ -91,20 +92,20 @@ define([
 
         // Rerender the interface.
         _updateRendering: function () {
- 
-                var _scrollTo = this.scrollTo;
+            if (this._contextObj !== null) {
+                var _scrollTo = this._contextObj.get(this.scrollTo);
                 var self = this;
                 
                 if (_scrollTo != ""){
                     if ($(`.${_scrollTo}`)[0]){
-                        debugger;
                         $(self.regionToScroll).animate({
-                            scrollTop: $(`.${_scrollTo}`).offset().top - this.offset
+                            scrollTop: $(`.${_scrollTo}`).offset().top -this.offset
                                 }, 1000);
 
                         dojoStyle.set(this.domNode, 'display', 'block');
                     }
                 }
+            }
              else {
                 dojoStyle.set(this.domNode, 'display', 'none');
             }
@@ -122,7 +123,7 @@ define([
 
             // When a mendix object exists create subscribtions.
             if (this._contextObj) {
-                if(this.scroll === 'OnUpdate' || this.scroll === 'All'){
+				if(this.scroll === 'OnUpdate' || this.scroll === 'All'){
                 		var objectHandle = this.subscribe({
 							guid: this._contextObj.getGuid(),
                     		callback: dojoLang.hitch(this, function(guid) {
@@ -135,7 +136,7 @@ define([
 				if(this.scroll === 'OnAttribute' || this.scroll === 'All'){
 					var attrHandle = this.subscribe({
 						guid: this._contextObj.getGuid(),
-						attr: this.scrollTo,
+						attr: this._contextObj.get(this.scrollTo),
 						callback: dojoLang.hitch(this, function(guid, attr, attrValue) {
 							this._updateRendering();
 						})
@@ -151,13 +152,12 @@ define([
 					this._handles.push(validationHandle);
 				}
             }
-       }
-        
+        }
 		
 		
 		
     });
 });
-require(['ScrollToRegion/widget/ScrollToRegionWithoutContext'], function () {
+require(['ScrollToAnchor/widget/ScrollToAnchor'], function () {
     'use strict';
 });

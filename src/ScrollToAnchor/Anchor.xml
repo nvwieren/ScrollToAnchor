@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<widget id="ScrollToRegion.widget.Anchor" needsEntityContext="false" xmlns="http://www.mendix.com/widget/1.0/">
+<widget id="ScrollToAnchor.widget.Anchor" needsEntityContext="false" xmlns="http://www.mendix.com/widget/1.0/">
   <name>Anchor</name>
   <description>This widget places an anchor on the specific page.</description>
 

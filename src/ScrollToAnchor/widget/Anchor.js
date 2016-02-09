@@ -35,14 +35,14 @@ define([
     "dojo/html",
     "dojo/_base/event",
 
-    "ScrollToRegion/lib/jquery-1.11.2"
+    "ScrollToAnchor/lib/jquery-1.11.2"
 ], function(declare, _WidgetBase, dom, dojoDom, dojoProp, dojoGeometry, dojoClass, dojoStyle, dojoConstruct, dojoArray, dojoLang, dojoText, dojoHtml, dojoEvent, _jQuery) {
     "use strict";
 
     var $ = _jQuery.noConflict(true);
 
     // Declare widget's prototype.
-    return declare("ScrollToRegion.widget.Anchor", [ _WidgetBase], {
+    return declare("ScrollToAnchor.widget.Anchor", [ _WidgetBase], {
 
         // _TemplatedMixin will create our dom node using this HTML template.
 
@@ -87,6 +87,6 @@ define([
         }
     });
 });
-require(['ScrollToRegion/widget/Anchor'], function () {
+require(['ScrollToAnchor/widget/Anchor'], function () {
     'use strict';
 });

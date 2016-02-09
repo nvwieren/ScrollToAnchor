@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<widget id="ScrollToRegion.widget.ScrollToRegionWithoutContext" needsEntityContext="true" xmlns="http://www.mendix.com/widget/1.0/">
-  <name>ScrollToRegion Without Context</name>
+<widget id="ScrollToAnchor.widget.ScrollToAnchor" needsEntityContext="true" xmlns="http://www.mendix.com/widget/1.0/">
+  <name>ScrollToAnchor</name>
   <description>This widget scrolls to a specific anchor on the page.</description>
 
   <icon>iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAIAAABvFaqvAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAXBJREFUeNpi1HUJYqAGYGKgEhh8BrFgFeXh4lSSl8Gj7d37D09evCZsUFdVvrIcToOePn3KyMjYMXPxzfuPCXgNjylA8PPnTyApLSZM2EVA8OHDh2/fvgEZzMzM4uLiyFIbdu5nYWHef/j4fxZ2RiYmAgYJgAFWqfU79kI1s/9n4+AiYNDXr19//PiBHjUsLPz8/HDu318/GQgaxMHBwcrKiiYI9CYy9////39+/WRhY8dnEDCAfv36hSbIxsbGy8uLLPL39y8CBnFxcbGzs6MJAmMdTeTvn9////0DBjlOg36DAabXMP37+9cPYJCTlkWYmLCoBwU5VfIaNMjRRNUU5Xm4uYDRzMPDg6kHM/gRQY7Mj/B1L0iJwWXz27dvgRZgN+jPbxSv8fBw4wn7P3/+ABkvXr0mXIwsX7/194/vuMz69evn379/j546h1WWEa3M/v75AzBdUKGEZGXjoE5Ry8zGTh2DgJmAhSyzAAIMAJmifjLIONbJAAAAAElFTkSuQmCC</icon>
 
   <properties>
-        <property key="scrollTo" type="string" required="true" defaultValue="">
+        <property key="scrollTo" type="attribute">
             <caption>Scroll to</caption>
             <category>Configuration</category>
-            <description>The class the widget will scroll to. Do not include the Dot before the class name, this is already included in the widget</description>
+            <description>The attribute where the scroll to variable is set. Do not include the Dot before the class name, this is already included in the widget</description>
+            <attributeTypes>
+                <attributeType name="String"/>
+            </attributeTypes>
         </property>
         <property key="regionToScroll" type="string" required="true" defaultValue=".region-content .mx-scrollcontainer-wrapper">
             <caption>Region to scroll</caption>
@@ -21,7 +24,7 @@
             <category>Configuration</category>
             <description>Offset will reduce the position to scroll to. So will make it scroll higher than the anchor.</description>
         </property>
-	  	  	<property key="scroll" type="enumeration" required="true" defaultValue="OnLoad">
+	  	<property key="scroll" type="enumeration" required="true" defaultValue="OnLoad">
             <caption>Scroll Option</caption>
             <category>Configuration</category>
 			<description>Choose when you want the widget to scroll</description>
