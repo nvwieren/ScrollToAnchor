@@ -21,6 +21,11 @@
             <category>Configuration</category>
             <description>Offset will reduce the position to scroll to. So will make it scroll higher than the anchor.</description>
         </property>
+	  	    <property key="offsetincrease" type="integer" required="true" defaultValue="0">
+            <caption>Offset increase</caption>
+            <category>Configuration</category>
+            <description>Offset will increase the position to scroll to. So will make it scroll higher than the anchor.</description>
+        </property>
 	  	  	<property key="scroll" type="enumeration" required="true" defaultValue="OnLoad">
             <caption>Scroll Option</caption>
             <category>Configuration</category>

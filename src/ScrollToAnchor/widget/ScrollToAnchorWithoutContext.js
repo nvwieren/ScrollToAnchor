@@ -50,6 +50,7 @@ define([
         scrollTo: "",
         regionToScroll: "",
         offset: "",
+		offsetincrease: "",
 		scroll: "",
 
         // Internal variables. Non-primitives created in the prototype are shared between all widget instances.
@@ -98,7 +99,7 @@ define([
                 if (_scrollTo != ""){
                     if ($(`.${_scrollTo}`)[0]){
                         $(self.regionToScroll).animate({
-                            scrollTop: $(`.${_scrollTo}`).position().top -self.offset
+                            scrollTop: $(`.${_scrollTo}`).position().top -self.offset + self.offsetincrease
                                 }, 1000);
 
                         dojoStyle.set(this.domNode, 'display', 'block');

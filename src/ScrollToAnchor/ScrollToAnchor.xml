@@ -20,9 +20,14 @@
             <description>The region which contains the anchor(s). If using new UX framework and your layout is set to per region use:.region-content .mx-scrollcontainer-wrapper. If your scroll behaviour is set to full page use: html, body.</description>
         </property>
         <property key="offset" type="integer" required="true" defaultValue="0">
-            <caption>Offset</caption>
+            <caption>Offset decrease</caption>
             <category>Configuration</category>
             <description>Offset will reduce the position to scroll to. So will make it scroll higher than the anchor.</description>
+        </property>
+	    <property key="offsetincrease" type="integer" required="true" defaultValue="0">
+            <caption>Offset increase</caption>
+            <category>Configuration</category>
+            <description>Offset will increase the position to scroll to. So will make it scroll higher than the anchor.</description>
         </property>
 	  	<property key="scroll" type="enumeration" required="true" defaultValue="OnLoad">
             <caption>Scroll Option</caption>
