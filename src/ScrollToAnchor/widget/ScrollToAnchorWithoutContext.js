@@ -97,9 +97,9 @@ define([
                 var self = this;
                 
                 if (_scrollTo != ""){
-                    if ($(`.${_scrollTo}`)[0]){
+                    if ($('.'+_scrollTo)[0]){
                         $(self.regionToScroll).animate({
-                            scrollTop: $(`.${_scrollTo}`).position().top -self.offset + self.offsetincrease
+                            scrollTop: $('.'+_scrollTo).position().top -self.offset + self.offsetincrease
                                 }, 1000);
 
                         dojoStyle.set(this.domNode, 'display', 'block');
